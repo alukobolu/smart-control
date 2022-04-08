@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trakka | Send Custom Notifications</title>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex row justify-content-center align-items-center py-md-5 py-3" style="min-height: fit-content;">
+            <div class="col-12">
+                <form action="{% url 'send-notifications' %}" method="post">
+                    <h4>Send Notifications</h4>
+                    <hr>
+                    {% csrf_token %}
+                    <input type="text" name="title" id="title" placeholder="Title">
+                    <input type="text" name="users" id="users" value="ALL">
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter Message"></textarea>
+                    <input class="btn btn-primary"  type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
