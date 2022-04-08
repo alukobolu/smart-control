@@ -40,7 +40,6 @@ def authenticate(request):
     return render(request,'index.html',{'info': androidmanagement})
     # return androidmanagement
 
-
 def create_enterprise(androidmanagement):
     CALLBACK_URL = 'https://storage.googleapis.com/android-management-quick-start/enterprise_signup_callback.html'
 
@@ -68,8 +67,6 @@ def create_enterprise(androidmanagement):
     print('\nYour enterprise name is', enterprise_name)
     enterprise_name = 'enterprises/LC00l3186x'
     return enterprise_name
-
-
 
 def create_policy(androidmanagement,enterprise_name):
     import json
@@ -100,7 +97,6 @@ def create_policy(androidmanagement,enterprise_name):
     #  'name': 'enterprises/LC00l3186x/policies/policy1',
     #  'version': '1'}
 
-
 def create_entroll_token(androidmanagement,policy_name,enterprise_name):
     enrollment_token = androidmanagement.enterprises().enrollmentTokens().create(
     parent=enterprise_name,
@@ -123,7 +119,7 @@ def main(request):
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    if os.path.exists('smartcontrol-346211-47d33cd1b55f.json'):
+    if os.path.exists('jsons.json'):
         print("hey")
         creds = Credentials.from_authorized_user_file('smartcontrol-346211-47d33cd1b55f.json', SCOPES)
     # If there are no (valid) credentials available, let the user log in.
