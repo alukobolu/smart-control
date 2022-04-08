@@ -116,9 +116,10 @@ def main(request):
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    if os.path.exists('jsons.json'):
+    if os.path.exists('client_secret_340732573184-hq4857tc435tb1mriahj6ggknlr499ag.apps.googleusercontent.com.json.json'):
         print("hey")
-        creds = Credentials.from_authorized_user_file('smartcontrol-346211-47d33cd1b55f.json', SCOPES)
+        # smartcontrol-346211-47d33cd1b55f.json
+        creds = Credentials.from_authorized_user_file('client_secret_340732573184-hq4857tc435tb1mriahj6ggknlr499ag.apps.googleusercontent.com.json', SCOPES)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
