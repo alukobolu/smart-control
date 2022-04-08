@@ -42,9 +42,10 @@ def main(request):
 
 def SignupUrls(request):
     headers = {
-        "Content-Type": "application/json",
+        'Authorization': 'Bearer AIzaSyA23khrf6lFeDufQHDRUvIGHk_EOeOzUGA',
+        'Accept': 'application/json',
     }
-    url = "https://androidmanagement.googleapis.com/v1/signupUrls"
+    url = "https://androidmanagement.googleapis.com/v1/signupUrls?key=AIzaSyA23khrf6lFeDufQHDRUvIGHk_EOeOzUGA"
     data1={
         "projectId": f"{cloud_project_id}",  
         "callbackUrl": "https://smartcontrolapp.herokuapp.com/callback", 
