@@ -6,4 +6,5 @@ urlpatterns = [
     path('index/', first),
     path('auth/', main), 
     path('policy/', create_policy), 
+    path('key',getkey),
 ]

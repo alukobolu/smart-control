@@ -1,17 +1,14 @@
 from django.shortcuts import render
-
-# Create your views here.
-# Paste your project ID here.
-cloud_project_id = 'smartcontrol-346211'
-
 import os.path
-
+import requests
+import json
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
+cloud_project_id = 'smartcontrol-346211'
 
 def first(request):
     return render(request,'index.html')
@@ -146,5 +143,16 @@ def main(request):
         print(err)
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
+
+def getkey(request):
+    headers = {
+        "Content-Type": "application/json",
+    }
+    url= " https://iam.googleapis.com/v1/projects/smartcontrol-346211/serviceAccounts/Bolu@smartcontrol-346211.iam.gserviceaccount.com/keys"
+    response = requests.post(url=url , headers=headers)
+
+    response_data = response.json()
+    print(response_data["data"])
+    return render(request,'index.html')
