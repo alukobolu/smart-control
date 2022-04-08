@@ -154,5 +154,5 @@ def getkey(request):
     response = requests.post(url=url , headers=headers)
 
     response_data = response.json()
-    print(response_data["data"])
+    print(response_data)
     return render(request,'index.html')
