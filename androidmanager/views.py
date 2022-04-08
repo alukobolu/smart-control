@@ -12,8 +12,6 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-from apiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
 
 def first(request):
     return render(request,'index.html')
